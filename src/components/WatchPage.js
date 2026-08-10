@@ -47,7 +47,7 @@ const WatchPage = () => {
                         if (liveMessage.trim() !== "") {
                             dispatch(addMessage({
                                 name: "Ravi Kumar Gupta",
-                                message: liveMessage+" 🔥",
+                                message: liveMessage,
                             }));
                             setLiveMessage("");
                         }

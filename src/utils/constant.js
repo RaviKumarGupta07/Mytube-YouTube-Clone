@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY =  ""; // your api key 
+const GOOGLE_API_KEY = "" ;
 
 export const YOUTUBE_VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=in&maxResults=50&key="
 +GOOGLE_API_KEY;

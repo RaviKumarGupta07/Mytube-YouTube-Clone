@@ -1,4 +1,4 @@
-# 🎥 Mytube - YouTube Clone
+# 🎥 Mytube-YouTube-Clone
 
 A React-based YouTube clone built while learning modern React development. This project demonstrates component architecture, routing, state management using Redux Toolkit, API integration, live chat simulation, search suggestions with debouncing, nested comments, and responsive UI.
 
@@ -203,7 +203,11 @@ npm start
 - Nested Comments
 - Search Suggestions
 
-(Add screenshots here later.)
+## 📸 Screenshots
+
+![Home Page](./public/my-youtube-screen1.png)
+
+![Watch Page](./public/my-youtube-screen2.png)
 
 ---
 
