@@ -3,12 +3,38 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import MainContainer from './components/MainContainer';
+import WatchPage from './components/WatchPage';
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    children: [
+      {
+        path: "/",
+        element: <MainContainer />,
+      },
+     {
+        path: "watch",
+        element: <WatchPage/>,
+      }, 
+    ]
+  },
+])
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={appStore}>
+      <RouterProvider router={appRouter} />
+    </Provider>
   </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

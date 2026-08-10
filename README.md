@@ -1,70 +1,215 @@
-# Getting Started with Create React App
+# 🎥 Mytube - YouTube Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based YouTube clone built while learning modern React development. This project demonstrates component architecture, routing, state management using Redux Toolkit, API integration, live chat simulation, search suggestions with debouncing, nested comments, and responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔍 Search videos using YouTube API
+- ⚡ Search suggestions with Debouncing
+- 💾 Search suggestion caching using Redux Toolkit
+- 📺 Watch video page
+- 💬 Live Chat simulation
+- 📝 Send live chat messages
+- 🌳 Nested Comments (Recursive Components)
+- 🎯 Dynamic Routing using React Router
+- 📂 Category filtering
+- 📱 Responsive UI using Tailwind CSS
+- ⚙️ State Management using Redux Toolkit
+- 🔄 API Polling
+- 🎨 Component-based architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+- React.js
+- React Router DOM
+- Redux Toolkit
+- Tailwind CSS
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- YouTube Data API v3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src
+│
+├── components
+│   ├── Head
+│   ├── Sidebar
+│   ├── MainContainer
+│   ├── ButtonList
+│   ├── VideoContainer
+│   ├── VideoCard
+│   ├── WatchPage
+│   ├── LiveChat
+│   ├── ChatMessage
+│   ├── CommentsContainer
+│   └── Comment
+│
+├── utils
+│   ├── appStore
+│   ├── appSlice
+│   ├── chatSlice
+│   ├── searchSlice
+│   ├── constants
+│   └── helper
+│
+├── App.js
+└── index.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 🧠 React Concepts Practiced
 
-### `npm run eject`
+- Functional Components
+- Hooks
+  - useState
+  - useEffect
+  - useSelector
+  - useDispatch
+- Props
+- Conditional Rendering
+- List Rendering
+- Recursive Components
+- Controlled Forms
+- Debouncing
+- API Polling
+- Cleanup Functions
+- Component Reusability
+- Lifting State Up
+- React Router
+- Redux Toolkit
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 📦 Redux Store
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+store
+│
+├── app
+├── search
+└── chat
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### appSlice
+- Toggle Sidebar
 
-## Learn More
+### searchSlice
+- Cache search suggestions
+- Avoid unnecessary API calls
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### chatSlice
+- Store live chat messages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+# ⚡ Optimizations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Debouncing
 
-### Analyzing the Bundle Size
+- Waits for the user to stop typing before making an API call.
+- Reduces unnecessary API requests.
+- Improves performance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+Typing:
+a
+ab
+abc
+abcd
 
-### Making a Progressive Web App
+Only one API request is sent after the delay.
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### Search Cache
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Previously searched keywords are stored in Redux.
+- Prevents duplicate API calls.
+- Faster user experience.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Live Chat
 
-### `npm run build` fails to minify
+- Simulated live chat using API polling.
+- New random messages are added periodically.
+- User can also send messages.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+### Nested Comments
+
+Implemented recursive components to render unlimited nested replies.
+
+```
+Comment
+ ├── Reply
+ │    ├── Reply
+ │    │     ├── Reply
+ │    │     └── Reply
+ │    └── Reply
+ └── Reply
+```
+
+---
+
+## 📚 What I Learned
+
+- Building scalable React applications
+- Component architecture
+- State management with Redux Toolkit
+- React Router
+- Recursive rendering
+- API integration
+- Debouncing techniques
+- API polling
+- Performance optimization
+- Form handling
+- Tailwind CSS
+- Project organization
+
+---
+
+## ▶️ Installation
+
+```bash
+git clone <repository-url>
+
+cd my-youtube
+
+npm install
+
+npm start
+```
+
+---
+
+## 📸 Screens
+
+- Home Page
+- Watch Page
+- Live Chat
+- Nested Comments
+- Search Suggestions
+
+(Add screenshots here later.)
+
+---
+
+## 👨‍💻 Author
+
+**Ravi Kumar Gupta**
+
+GitHub:
+https://github.com/RaviKumarGupta07
